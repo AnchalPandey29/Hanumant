@@ -47,28 +47,19 @@ export default function Footer() {
   
   return (
     <footer className="relative bg-primary text-primary-foreground/80 pt-24 sm:pt-32 pb-12">
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
-          <svg
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-              className="relative block w-full h-[80px] fill-current text-slate-50 dark:text-slate-900"
-          >
-              <path
-                  d="M1200 120L0 120 0 0 1200 0 1200 120z"
-                  className="fill-primary"
-              ></path>
-              <path
-                  d="M1200 120L0 120 0 0 1200 0 1200 120z"
-                  className="fill-slate-50 dark:fill-slate-900"
-                  transform="translate(0, -1)"
-              ></path>
-              <path
-                d="M1200,0C1133.33,10,1066.67,20,1000,30C733.33,90,466.67,90,200,30C133.33,20,66.67,10,0,0L1200,0Z"
-                className="fill-primary"
-              ></path>
-          </svg>
+       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] -mt-px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          className="relative block w-full h-[120px] sm:h-[160px]"
+        >
+          <path
+            fill="hsl(var(--background))"
+            fillOpacity="1"
+            d="M0,96L60,128C120,160,240,224,360,224C480,224,600,160,720,122.7C840,85,960,75,1080,85.3C1200,96,1320,128,1380,144L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+          ></path>
+        </svg>
       </div>
 
 
