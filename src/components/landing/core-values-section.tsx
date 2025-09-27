@@ -52,8 +52,11 @@ const values = [
 
 export default function CoreValuesSection() {
   return (
-    <section id="values" className="py-20 sm:py-32 bg-slate-50 dark:bg-slate-900">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="values" className="py-20 sm:py-32 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
+       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjA0LDIwNCwyMDQsMC4wNSkiPjxwYXRoIGQ9Ik0wIC41SDMybTAtMTZ2MzJNMTAgMC41SDIybTAtMTZ2MzJNMjAgMC41SDIybTAtMTZ2MzIiLz48L3N2Zz4=')] opacity-50"></div>
+       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(30,58,138,0.3),rgba(255,255,255,0))]"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column: About Us */}
           <div className="space-y-12">
@@ -66,13 +69,13 @@ export default function CoreValuesSection() {
             <div className="grid sm:grid-cols-2 gap-6">
                 {aboutUsCards.map((card, index) => (
                     <AnimatedContent key={card.title} delay={150 * (index + 1)}>
-                        <div className="group relative rounded-2xl p-6 h-full bg-gradient-to-br from-secondary/80 to-primary/80 text-primary-foreground shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden">
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                            <div className="absolute top-0 left-0 w-1/2 h-full bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                        <div className="group relative rounded-2xl p-6 h-full bg-secondary/10 dark:bg-secondary/20 text-foreground dark:text-primary-foreground shadow-xl border border-white/10 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-primary/10 opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+                            <div className="absolute top-0 left-0 w-1/2 h-full bg-white/5 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                             <div className="relative z-10 space-y-4 h-full flex flex-col">
                                 {card.icon}
-                                <h3 className="font-headline text-2xl font-bold">{card.title}</h3>
-                                <p className="text-primary-foreground/80 text-sm flex-1">{card.description}</p>
+                                <h3 className="font-headline text-2xl font-bold text-primary dark:text-white">{card.title}</h3>
+                                <p className="text-primary/80 dark:text-primary-foreground/80 text-sm flex-1">{card.description}</p>
                             </div>
                         </div>
                     </AnimatedContent>
@@ -94,9 +97,9 @@ export default function CoreValuesSection() {
                     <AnimatedContent key={value.title} delay={index * 100}>
                         <Tooltip>
                             <TooltipTrigger asChild>
-                                <Card className="h-full text-center bg-background/60 dark:bg-card/60 backdrop-blur-sm border-white/20 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                                <Card className="h-full text-center bg-background/60 dark:bg-card/60 backdrop-blur-sm border-white/20 shadow-lg hover:shadow-accent/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
                                     <CardHeader className="items-center p-4 sm:p-6">
-                                    <div className="rounded-full bg-accent/10 p-4">
+                                    <div className="rounded-full bg-accent/10 p-4 transition-colors duration-300 group-hover:bg-accent/20">
                                         {value.icon}
                                     </div>
                                     <CardTitle className="font-headline text-base sm:text-lg mt-4">{value.title}</CardTitle>
@@ -116,9 +119,9 @@ export default function CoreValuesSection() {
 
         {/* Bottom CTA Bar */}
         <AnimatedContent delay={500}>
-            <div className="mt-24 text-center p-8 bg-background/50 rounded-2xl border shadow-sm">
+            <div className="mt-24 text-center p-8 bg-background/50 rounded-2xl border shadow-sm backdrop-blur-sm">
                 <h3 className="text-xl font-semibold text-primary mb-4">Discover how our values shape your journey.</h3>
-                <Button variant="secondary" size="lg" className="rounded-full group">
+                <Button variant="secondary" size="lg" className="rounded-full group shadow-lg hover:shadow-secondary/40 transition-shadow duration-300">
                     Explore Programs
                     <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
