@@ -15,18 +15,18 @@ import Autoplay from "embla-carousel-autoplay"
 
 
 const students = [
-    { name: 'Abhishek Saini', role: 'Graphic Designer' },
-    { name: 'Abhishek Tiwari', role: 'Full-Stack Developer' },
-    { name: 'Akriti Kumari', role: 'Data Analyst' },
-    { name: 'Nitika Pandey', role: 'Full-Stack Developer' },
-    { name: 'Nida Ansari', role: 'Graphic Designer' },
-    { name: 'Ankesh Kumar', role: 'Data Analyst' },
-    { name: 'Arshlan', role: 'Data Scientist' },
-    { name: 'Asha Sharma', role: 'Full-Stack Developer' },
-    { name: 'Shivam Pandey', role: 'Digital Marketing' },
-    { name: 'Preeti Kumari', role: 'Digital Marketing' },
-    { name: 'Harshit Mishra', role: 'AutoCAD Engineer' },
-    { name: 'Anuj Singh', role: 'AutoCAD Engineer' },
+    { name: 'Abhishek Saini', role: 'Graphic Designer', testimonial: "The best place to learn and grow. Hanumant Technology transformed my career!" },
+    { name: 'Abhishek Tiwari', role: 'Full-Stack Developer', testimonial: "Incredible instructors and a world-class curriculum. Highly recommended!" },
+    { name: 'Akriti Kumari', role: 'Data Analyst', testimonial: "I landed my dream job thanks to the practical skills I gained here." },
+    { name: 'Nitika Pandey', role: 'Full-Stack Developer', testimonial: "The hands-on projects were invaluable. A truly amazing experience." },
+    { name: 'Nida Ansari', role: 'Graphic Designer', testimonial: "My creativity was nurtured here. I'm now a confident designer." },
+    { name: 'Ankesh Kumar', role: 'Data Analyst', testimonial: "The placement support is top-notch. They really care about student success." },
+    { name: 'Arshlan', role: 'Data Scientist', testimonial: "Deep-dived into complex topics with ease. Fantastic learning environment." },
+    { name: 'Asha Sharma', role: 'Full-Stack Developer', testimonial: "From zero to a full-stack developer, my journey has been incredible." },
+    { name: 'Shivam Pandey', role: 'Digital Marketing', testimonial: "The digital marketing course is practical and industry-aligned." },
+    { name: 'Preeti Kumari', role: 'Digital Marketing', testimonial: "I learned strategies that I could apply from day one. Great program!" },
+    { name: 'Harshit Mishra', role: 'AutoCAD Engineer', testimonial: "The AutoCAD training is the best in the industry. Very detailed." },
+    { name: 'Anuj Singh', role: 'AutoCAD Engineer', testimonial: "I mastered AutoCAD and secured a great position. Thank you!" },
 ];
 
 
@@ -76,6 +76,9 @@ export default function StudentShowcase() {
                                             height={300}
                                             className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                                         />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                            <p className="text-white text-center text-sm italic">"{student.testimonial}"</p>
+                                        </div>
                                     </div>
                                     <div className="p-6 flex-1 flex flex-col justify-center text-center bg-card">
                                         <h3 className="font-headline text-xl font-bold text-primary">{student.name}</h3>
