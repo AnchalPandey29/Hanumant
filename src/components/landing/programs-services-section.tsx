@@ -1,7 +1,7 @@
 'use client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Code, Server, Briefcase, Laptop, Smartphone, Scaling, Megaphone, Search } from 'lucide-react';
+import { Code, Server, Briefcase, Laptop, Smartphone, Scaling, Megaphone, Search, Globe, Palette, Layers, Camera, Image as ImageIcon, ShieldCheck, Mail, Cloud, HardDrive } from 'lucide-react';
 import { AnimatedContent } from '@/components/shared/animated-content';
 import React, { useRef } from 'react';
 
@@ -18,8 +18,20 @@ const programs = [
 const services = [
   { icon: <Briefcase className="h-8 w-8 text-accent" />, title: 'Corporate Training', description: 'Upskill your workforce with custom-tailored tech programs.' },
   { icon: <Laptop className="h-8 w-8 text-accent" />, title: 'IT Consulting', description: 'Leverage our expertise to solve your most complex business challenges.' },
-  { icon: <Code className="h-8 w-8 text-accent" />, title: 'Software Development', description: 'End-to-end development services to bring your ideas to life.' },
+  { icon: <Globe className="h-8 w-8 text-accent" />, title: 'Website Development', description: 'Building responsive and high-performance websites for your business.' },
+  { icon: <Smartphone className="h-8 w-8 text-accent" />, title: 'App Development', description: 'Creating intuitive mobile applications for iOS and Android platforms.' },
+  { icon: <Palette className="h-8 w-8 text-accent" />, title: 'Website Design', description: 'Crafting visually stunning and user-friendly website designs.' },
+  { icon: <Layers className="h-8 w-8 text-accent" />, title: 'App UI & UX Design', description: 'Designing seamless and engaging user experiences for mobile apps.' },
+  { icon: <Camera className="h-8 w-8 text-accent" />, title: 'Photo & Video Editing', description: 'Professional editing services to make your visual content shine.' },
+  { icon: <ImageIcon className="h-8 w-8 text-accent" />, title: 'Logo, Banner & Video Design', description: 'Creative design solutions for your brand’s identity and marketing materials.' },
+  { icon: <Search className="h-8 w-8 text-accent" />, title: 'SEO, SMO & SEM', description: 'Boosting your online visibility and search engine ranking.' },
+  { icon: <Megaphone className="h-8 w-8 text-accent" />, title: 'Digital Marketing', description: 'Comprehensive strategies to grow your digital footprint.' },
+  { icon: <ShieldCheck className="h-8 w-8 text-accent" />, title: 'Domain & SSL', description: 'Secure your website with reliable domain registration and SSL certificates.' },
+  { icon: <Server className="h-8 w-8 text-accent" />, title: 'Web Hosting & Web Mail', description: 'Dependable hosting solutions and professional email services.' },
+  { icon: <Cloud className="h-8 w-8 text-accent" />, title: 'Cloud Technology', description: 'Implementing scalable and efficient cloud infrastructure solutions.' },
+  { icon: <HardDrive className="h-8 w-8 text-accent" />, title: 'Hardware & Network Support', description: 'Providing expert support for your IT hardware and network infrastructure.' },
 ];
+
 
 const TiltCard = ({ children }: { children: React.ReactNode }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -69,7 +81,7 @@ export default function ProgramsServicesSection() {
           </div>
         </AnimatedContent>
 
-        <Tabs defaultValue="programs" className="w-full max-w-5xl mx-auto">
+        <Tabs defaultValue="programs" className="w-full max-w-7xl mx-auto">
           <AnimatedContent delay={150}>
             <TabsList className="grid w-full grid-cols-2 h-14 bg-background/60 backdrop-blur-sm border shadow-inner">
               <TabsTrigger value="programs" className="text-base h-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground">Training Programs</TabsTrigger>
@@ -100,9 +112,9 @@ export default function ProgramsServicesSection() {
             </div>
           </TabsContent>
           <TabsContent value="services" className="mt-12">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {services.map((item, index) => (
-                <AnimatedContent key={item.title} delay={index * 150}>
+                <AnimatedContent key={item.title} delay={index * 100}>
                   <TiltCard>
                     <Card className="h-full text-center bg-background/60 dark:bg-card/70 backdrop-blur-md border border-white/10 shadow-lg group flex flex-col">
                          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
