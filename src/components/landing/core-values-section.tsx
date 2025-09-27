@@ -130,7 +130,7 @@ export default function CoreValuesSection() {
         <AnimatedContent delay={500}>
             <div className="mt-24 text-center p-8 bg-primary rounded-2xl border shadow-sm">
                 <h3 className="text-xl font-semibold text-primary-foreground mb-4">Discover how our values shape your journey.</h3>
-                <Button variant="secondary" size="lg" className="rounded-full group shadow-lg hover:shadow-secondary/40 transition-shadow duration-300 text-secondary-foreground">
+                <Button variant="secondary" size="lg" className="rounded-full group shadow-lg hover:shadow-secondary/40 transition-shadow duration-300 text-secondary-foreground hover:text-black">
                     Explore Programs
                     <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
