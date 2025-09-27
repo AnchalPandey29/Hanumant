@@ -27,8 +27,8 @@ const GridPattern = () => (
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen min-h-[700px] flex items-center justify-center bg-blue-950 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950 via-sky-800 to-blue-950 opacity-20"></div>
+    <section className="relative w-full h-screen min-h-[700px] flex items-center justify-center bg-slate-900 text-white overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
       <GridPattern />
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiPjxwYXRoIGQ9Ik0wIC41SDMybTAtMTZ2MzJNMTAgMC41SDIybTAtMTZ2MzJNMjAgMC41SDIybTAtMTZ2MzJNMCAxMC41SDMybTAtMTZ2MzJNMCAyMC41SDMybTAtMTZ2MzIiLz48L3N2Zz4=')] opacity-30"></div>
 
