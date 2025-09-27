@@ -1,4 +1,6 @@
+'use client';
 
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -33,6 +35,16 @@ const servicesLinks = [
 
 
 export default function Footer() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <footer className="bg-primary h-[500px]"></footer>;
+  }
+  
   return (
     <footer className="relative bg-primary text-primary-foreground/80 pt-24 sm:pt-32 pb-12">
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
@@ -44,7 +56,17 @@ export default function Footer() {
               className="relative block w-full h-[80px] fill-current text-slate-50 dark:text-slate-900"
           >
               <path
-                  d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                  d="M1200 120L0 120 0 0 1200 0 1200 120z"
+                  className="fill-primary"
+              ></path>
+              <path
+                  d="M1200 120L0 120 0 0 1200 0 1200 120z"
+                  className="fill-slate-50 dark:fill-slate-900"
+                  transform="translate(0, -1)"
+              ></path>
+              <path
+                d="M1200,0C1133.33,10,1066.67,20,1000,30C733.33,90,466.67,90,200,30C133.33,20,66.67,10,0,0L1200,0Z"
+                className="fill-primary"
               ></path>
           </svg>
       </div>
