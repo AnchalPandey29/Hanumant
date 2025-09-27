@@ -1,13 +1,24 @@
 import { Button } from '@/components/ui/button';
 import { AnimatedContent } from '@/components/shared/animated-content';
+import Image from 'next/image';
 
 export default function CtaSection() {
   return (
     <section className="relative bg-primary text-primary-foreground">
-        <div 
-            className="absolute top-0 right-0 bottom-0 w-full md:w-1/2 bg-secondary"
-            style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
-        ></div>
+        <div className="absolute top-0 right-0 bottom-0 w-full md:w-1/2">
+            <div 
+                className="absolute inset-0 bg-secondary"
+                style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
+            ></div>
+            <Image
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3NTg5NTMwMjN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Team working"
+                data-ai-hint="team meeting"
+                fill
+                className="object-cover opacity-20"
+                style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
+            />
+        </div>
         <div className="relative container mx-auto px-4 md:px-6 py-20 sm:py-32">
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <AnimatedContent>
@@ -24,7 +35,7 @@ export default function CtaSection() {
                 <AnimatedContent delay={150} className="flex justify-center md:justify-start">
                     <Button size="lg" className="bg-background text-primary hover:bg-background/90 w-full sm:w-auto text-lg py-8 px-12 group relative overflow-hidden shadow-2xl">
                         <span className="absolute inset-0 bg-primary/10 transform scale-x-0 transition-transform duration-500 ease-in-out origin-left group-hover:scale-x-100"></span>
-                        <span className="relative">Apply Now</span>
+                        <span className="relative">Contact Now</span>
                     </Button>
                 </AnimatedContent>
             </div>
