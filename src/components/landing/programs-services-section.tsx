@@ -46,7 +46,7 @@ const TiltCard = ({ children }: { children: React.ReactNode }) => {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="transition-transform duration-300 ease-out will-change-transform"
+      className="transition-transform duration-300 ease-out will-change-transform h-full"
     >
       {children}
     </div>
@@ -82,7 +82,7 @@ export default function ProgramsServicesSection() {
               {programs.map((item, index) => (
                 <AnimatedContent key={item.title} delay={index * 150}>
                   <TiltCard>
-                    <Card className="h-full text-center bg-background/60 dark:bg-card/70 backdrop-blur-md border border-white/10 shadow-lg group">
+                    <Card className="h-full text-center bg-background/60 dark:bg-card/70 backdrop-blur-md border border-white/10 shadow-lg group flex flex-col">
                         <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <CardHeader className="items-center relative z-10">
                             <div className="p-4 bg-secondary/10 rounded-full mb-2 border border-secondary/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary/20">
@@ -90,7 +90,7 @@ export default function ProgramsServicesSection() {
                             </div>
                             <CardTitle className="font-headline mt-2 text-xl">{item.title}</CardTitle>
                         </CardHeader>
-                        <CardContent className="relative z-10">
+                        <CardContent className="relative z-10 flex-grow">
                             <p className="text-sm text-foreground/70">{item.description}</p>
                         </CardContent>
                     </Card>
@@ -104,7 +104,7 @@ export default function ProgramsServicesSection() {
               {services.map((item, index) => (
                 <AnimatedContent key={item.title} delay={index * 150}>
                   <TiltCard>
-                    <Card className="h-full text-center bg-background/60 dark:bg-card/70 backdrop-blur-md border border-white/10 shadow-lg group">
+                    <Card className="h-full text-center bg-background/60 dark:bg-card/70 backdrop-blur-md border border-white/10 shadow-lg group flex flex-col">
                          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <CardHeader className="items-center relative z-10">
                             <div className="p-4 bg-accent/10 rounded-full mb-2 border border-accent/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/20">
@@ -112,7 +112,7 @@ export default function ProgramsServicesSection() {
                             </div>
                             <CardTitle className="font-headline mt-2 text-xl">{item.title}</CardTitle>
                         </CardHeader>
-                        <CardContent className="relative z-10">
+                        <CardContent className="relative z-10 flex-grow">
                             <p className="text-sm text-foreground/70">{item.description}</p>
                         </CardContent>
                     </Card>
