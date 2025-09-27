@@ -154,7 +154,7 @@ export default function HeroSection() {
                 <div className="relative container mx-auto px-4 md:px-6 z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="text-center md:text-left">
-                            <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl">
+                            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
                                 Best IT Company & No.1 Training Institute
                             </h1>
                             <p className="mt-6 max-w-2xl mx-auto md:mx-0 text-lg text-foreground/80 md:text-xl">
@@ -175,7 +175,7 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
                 <AnimatedContent>
-                    <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-primary">
+                    <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-primary">
                         Best IT Company & No.1 Training Institute
                     </h1>
                 </AnimatedContent>
