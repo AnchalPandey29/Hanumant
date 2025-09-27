@@ -66,7 +66,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pt-16 border-t border-white/10">
           
-          <div className="space-y-6">
+          <div className="space-y-6 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-white">
                 <Mountain className="h-7 w-7 text-secondary" />
                 <span>Hanumant</span>
@@ -82,27 +82,6 @@ export default function Footer() {
             </div>
           </div>
 
-          
-          <div className="space-y-4">
-            <h4 className="font-headline text-lg font-semibold text-white">Our Services</h4>
-            <ul className="space-y-2">
-              {servicesLinks.map(link => (
-                  <li key={link.label}><Link href={link.href} className="hover:text-white transition-colors duration-200 relative group"><span>{link.label}</span><span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span></Link></li>
-              ))}
-            </ul>
-          </div>
-          
-          
-          <div className="space-y-4">
-            <h4 className="font-headline text-lg font-semibold text-white">Useful Links</h4>
-            <ul className="space-y-2">
-              {usefulLinks.map(link => (
-                  <li key={link.label}><Link href={link.href} className="hover:text-white transition-colors duration-200 relative group"><span>{link.label}</span><span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span></Link></li>
-              ))}
-            </ul>
-          </div>
-          
-          
           <div className="space-y-6">
             <h4 className="font-headline text-lg font-semibold text-white">Contact Us</h4>
              <div className="space-y-4">
@@ -136,8 +115,24 @@ export default function Footer() {
                 </div>
             </div>
           </div>
-
-
+          
+          <div className="space-y-4">
+            <h4 className="font-headline text-lg font-semibold text-white">Useful Links</h4>
+            <ul className="space-y-2">
+              {usefulLinks.map(link => (
+                  <li key={link.label}><Link href={link.href} className="hover:text-white transition-colors duration-200 relative group"><span>{link.label}</span><span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span></Link></li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="space-y-4">
+            <h4 className="font-headline text-lg font-semibold text-white">Our Services</h4>
+            <ul className="space-y-2">
+              {servicesLinks.map(link => (
+                  <li key={link.label}><Link href={link.href} className="hover:text-white transition-colors duration-200 relative group"><span>{link.label}</span><span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span></Link></li>
+              ))}
+            </ul>
+          </div>
           
           <div className="space-y-4">
             <h4 className="font-headline text-lg font-semibold text-white">Newsletter</h4>
