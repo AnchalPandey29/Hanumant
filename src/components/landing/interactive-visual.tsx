@@ -55,8 +55,9 @@ export function InteractiveVisual() {
       {/* Central Image */}
       <div className="absolute w-80 h-80 z-10">
         <Image 
-          src="https://d1rdz15x9x7c4f.cloudfront.net/assets/payload-images/Why-Choose-OneClick-for-Data-Engineering-Services-.png" 
-          alt="Data Engineering Services"
+          src="https://d1rdz15x9x7c4f.cloudfront.net/assets/payload-images/hanumant-interactive-visual.png" 
+          alt="Abstract technology visualization"
+          data-ai-hint="abstract technology"
           width={320}
           height={320}
           className="object-contain"
@@ -84,7 +85,7 @@ export function InteractiveVisual() {
             }}
           >
             <div className={cn(
-              "w-16 h-16 p-4 bg-gray-800/50 rounded-full shadow-lg backdrop-blur-sm border border-white/10"
+              "w-16 h-16 p-4 bg-background/50 rounded-full shadow-lg backdrop-blur-sm border border-white/10"
             )}>
               <item.icon className={cn("w-full h-full", item.color)} strokeWidth={1.5} />
             </div>
