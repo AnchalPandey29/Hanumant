@@ -36,12 +36,12 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
                 <AnimatedContent>
-                    <h1 className="font-headline text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">
+                    <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
                         Best IT Company & No.1 Training Institute
                     </h1>
                 </AnimatedContent>
                 <AnimatedContent delay={150}>
-                    <p className="mt-6 max-w-2xl mx-auto md:mx-0 text-lg text-white/80 md:text-xl">
+                    <p className="mt-6 max-w-2xl mx-auto md:mx-0 text-base text-white/80 md:text-lg">
                         Hanumant Technology is the Best IT Company & Training Institute in Lucknow. We provide #1 IT Services and Training programs with 100% job placement.
                     </p>
                 </AnimatedContent>
