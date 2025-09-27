@@ -55,7 +55,7 @@ export function InteractiveVisual() {
       {/* Central Image */}
       <div className="absolute w-80 h-80 z-10">
         <Image 
-          src="https://d1rdz15x9x7c4f.cloudfront.net/assets/payload-images/hanumant-interactive-visual.png" 
+          src="https://portal.coepvlab.ac.in/VirtualMathsLab/resource/images/homepage/ams.gif" 
           alt="Abstract technology visualization"
           data-ai-hint="abstract technology"
           width={320}

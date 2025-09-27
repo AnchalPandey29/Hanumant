@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
         hostname: 'd1rdz15x9x7c4f.cloudfront.net',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'portal.coepvlab.ac.in',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
