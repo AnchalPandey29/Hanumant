@@ -29,13 +29,21 @@ export default function Header() {
   const headerClasses = isMounted && isScrolled 
     ? 'bg-background/80 shadow-md backdrop-blur-sm' 
     : 'bg-transparent';
+  
+  const textClasses = isMounted && isScrolled
+    ? 'text-primary'
+    : 'text-white';
+  
+  const mobileButtonClasses = isMounted && isScrolled
+    ? 'text-primary border-border'
+    : 'text-white border-white/20';
 
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${headerClasses}`}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-primary">
+        <Link href="/" className={`flex items-center gap-2 font-headline text-2xl font-bold transition-colors duration-300 ${textClasses}`}>
           <Mountain className="h-7 w-7 text-secondary" />
           <span className="font-headline">Hanumant</span>
         </Link>
@@ -44,7 +52,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-medium text-foreground/80 transition-colors hover:text-foreground"
+              className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-foreground/80 hover:text-foreground' : 'text-white/80 hover:text-white'}`}
             >
               {link.label}
             </Link>
@@ -54,7 +62,7 @@ export default function Header() {
            <Button variant="secondary" className="hidden md:inline-flex">Get in Touch</Button>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="md:hidden">
+              <Button variant="outline" size="icon" className={`md:hidden rounded-full bg-background/20 backdrop-blur-sm shadow-lg transition-colors duration-300 ${mobileButtonClasses}`}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
