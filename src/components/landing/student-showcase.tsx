@@ -65,23 +65,24 @@ export default function StudentShowcase() {
                     {students.map((student, index) => (
                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4 pl-4">
                         <div className="p-1 h-full">
-                        <Card className="h-full overflow-hidden group rounded-2xl shadow-lg border border-transparent hover:border-secondary transition-all duration-300">
-                            <CardContent className="relative flex flex-col aspect-[3/4] items-center justify-end p-0">
-                                <Image
-                                    src={studentImages[index % studentImages.length]?.imageUrl || `https://picsum.photos/seed/student${index}/400/500`}
-                                    alt={student.name}
-                                    data-ai-hint={studentImages[index % studentImages.length]?.imageHint || "person portrait"}
-                                    width={400}
-                                    height={500}
-                                    className="object-cover w-full h-full absolute inset-0 transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                                <div className="relative p-6 text-white text-center w-full transform transition-transform duration-500 group-hover:-translate-y-4">
-                                    <h3 className="font-headline text-2xl font-bold">{student.name}</h3>
-                                    <p className="text-sm text-secondary font-semibold uppercase tracking-wider">{student.role}</p>
-                                </div>
-                            </CardContent>
-                        </Card>
+                            <Card className="h-full overflow-hidden group rounded-2xl shadow-lg border bg-card transition-all duration-300 hover:shadow-xl hover:border-secondary">
+                                <CardContent className="p-0 flex flex-col h-full">
+                                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                                        <Image
+                                            src={studentImages[index % studentImages.length]?.imageUrl || `https://picsum.photos/seed/student${index}/400/300`}
+                                            alt={student.name}
+                                            data-ai-hint={studentImages[index % studentImages.length]?.imageHint || "person portrait"}
+                                            width={400}
+                                            height={300}
+                                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                    </div>
+                                    <div className="p-6 flex-1 flex flex-col justify-center text-center bg-card">
+                                        <h3 className="font-headline text-xl font-bold text-primary">{student.name}</h3>
+                                        <p className="text-sm text-secondary font-semibold uppercase tracking-wider mt-1">{student.role}</p>
+                                    </div>
+                                </CardContent>
+                            </Card>
                         </div>
                     </CarouselItem>
                     ))}
