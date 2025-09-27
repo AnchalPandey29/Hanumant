@@ -7,10 +7,13 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Mountain } from 'lucide-react';
 
 const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '#services', label: 'Services' },
-  { href: '#about', label: 'About' },
-  { href: '#students', label: 'Showcase' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#services', label: 'Training' },
+  { href: '#students', label: 'Placement' },
+  { href: '#contact', label: 'Branches' },
+  { href: '#', label: 'Certificate' },
+  { href: '#contact', label: 'Contact Us' },
 ];
 
 export default function Header() {
@@ -61,7 +64,7 @@ export default function Header() {
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
-              key={link.href}
+              key={link.label}
               href={link.href}
               className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-foreground/80 hover:text-foreground' : 'text-primary/80 hover:text-primary'}`}
             >
@@ -87,7 +90,7 @@ export default function Header() {
                 <nav className="grid gap-4">
                   {navLinks.map((link) => (
                     <Link
-                      key={link.href}
+                      key={link.label}
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
                       className="text-lg font-medium text-foreground/80 hover:text-foreground"
