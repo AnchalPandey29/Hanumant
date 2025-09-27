@@ -51,7 +51,7 @@ export function InteractiveVisual() {
   }
 
   return (
-    <div ref={containerRef} className="relative w-full h-[500px] flex items-center justify-center">
+    <div ref={containerRef} className="relative w-full h-[500px] flex items-center justify-center bg-gray-900 rounded-full">
       {/* Central Image */}
       <div className="absolute w-80 h-80 z-10">
         <Image 
