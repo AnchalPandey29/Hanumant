@@ -169,7 +169,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full h-screen min-h-[700px] flex items-center justify-center bg-slate-50 dark:bg-slate-950 text-foreground overflow-hidden">
       <AnimatedBackground />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-slate-950 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
 
       <div className="relative container mx-auto px-4 md:px-6 z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
