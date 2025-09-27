@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -34,7 +35,7 @@ const servicesLinks = [
 export default function Footer() {
   return (
     <footer className="relative bg-primary text-primary-foreground/80 pt-24 sm:pt-32 pb-12">
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform rotate-180">
           <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
