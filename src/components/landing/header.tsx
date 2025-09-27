@@ -16,6 +16,7 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -34,9 +35,16 @@ export default function Header() {
     ? 'text-primary'
     : 'text-white';
   
-  const mobileButtonClasses = isMounted && isScrolled
-    ? 'text-primary border-border'
-    : 'text-white border-white/20';
+  const getMobileButtonClasses = () => {
+    let classes = 'md:hidden rounded-full bg-background/20 backdrop-blur-sm shadow-lg transition-colors duration-300 ';
+    if (isMenuOpen) {
+        classes += 'bg-secondary text-secondary-foreground ';
+    } else {
+        classes += isScrolled ? 'text-primary border-border ' : 'text-white border-white/20 ';
+    }
+    return classes;
+  };
+
 
   return (
     <header
@@ -60,9 +68,9 @@ export default function Header() {
         </nav>
         <div className="flex items-center gap-4">
            <Button variant="secondary" className="hidden md:inline-flex">Get in Touch</Button>
-          <Sheet>
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className={`md:hidden rounded-full bg-background/20 backdrop-blur-sm shadow-lg transition-colors duration-300 ${mobileButtonClasses}`}>
+              <Button variant="outline" size="icon" className={getMobileButtonClasses()}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
@@ -78,6 +86,7 @@ export default function Header() {
                     <Link
                       key={link.href}
                       href={link.href}
+                      onClick={() => setIsMenuOpen(false)}
                       className="text-lg font-medium text-foreground/80 hover:text-foreground"
                     >
                       {link.label}
