@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Code, GraduationCap, TrendingUp, BrainCircuit, Rocket, Trophy } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const icons = [
   { icon: GraduationCap, size: 'w-16 h-16', color: 'text-sky-400' },
@@ -42,13 +43,21 @@ export function InteractiveVisual() {
 
   return (
     <div ref={containerRef} className="relative w-full h-[450px] flex items-center justify-center">
-      {/* Central Orb */}
-      <div className="absolute w-64 h-64 bg-blue-900/50 rounded-full blur-3xl"></div>
+      {/* Central Image */}
+      <div className="absolute w-80 h-80">
+        <Image 
+          src="https://d1rdz15x9x7c4f.cloudfront.net/assets/payload-images/Why-Choose-OneClick-for-Data-Engineering-Services-.png" 
+          alt="Data Engineering Services"
+          width={320}
+          height={320}
+          className="object-contain"
+        />
+      </div>
       
       {/* Orbiting Icons */}
       {icons.map((item, index) => {
         const angle = (index / icons.length) * 2 * Math.PI;
-        const radius = 200;
+        const radius = 220; // Increased radius to orbit around the image
         const x = Math.cos(angle) * radius;
         const y = Math.sin(angle) * radius;
         const animationDelay = `${index * 1.5}s`;
