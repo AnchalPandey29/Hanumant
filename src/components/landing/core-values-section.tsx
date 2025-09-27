@@ -96,8 +96,8 @@ export default function CoreValuesSection() {
                     <Card className="h-full text-center bg-background/60 dark:bg-card/60 backdrop-blur-sm border-white/20 shadow-lg hover:shadow-accent/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
                         <CardContent className="p-4 sm:p-6 flex flex-col items-center justify-center h-full">
                             <div className="relative w-full h-full flex items-center justify-center">
-                                <div className="transition-opacity duration-300 group-hover:opacity-0">
-                                    <div className="rounded-full bg-accent/10 p-4 transition-colors duration-300 group-hover:bg-accent/20">
+                                <div className="transition-opacity duration-300 group-hover:opacity-0 flex flex-col items-center">
+                                    <div className="rounded-full bg-accent/10 p-4 inline-flex transition-colors duration-300 group-hover:bg-accent/20">
                                         {value.icon}
                                     </div>
                                     <CardTitle className="font-headline text-base sm:text-lg mt-4">{value.title}</CardTitle>
@@ -128,7 +128,3 @@ export default function CoreValuesSection() {
     </section>
   );
 }
-
-// Add required icons to avoid breaking the build if they aren't used elsewhere.
-// This is a workaround for tree-shaking issues in some environments.
-const _ = { Users: Users, ShieldCheck: ShieldCheck };
