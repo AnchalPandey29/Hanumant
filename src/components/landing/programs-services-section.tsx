@@ -72,8 +72,8 @@ export default function ProgramsServicesSection() {
         <Tabs defaultValue="programs" className="w-full max-w-5xl mx-auto">
           <AnimatedContent delay={150}>
             <TabsList className="grid w-full grid-cols-2 h-14 bg-background/60 backdrop-blur-sm border shadow-inner">
-              <TabsTrigger value="programs" className="text-base h-full">Training Programs</TabsTrigger>
-              <TabsTrigger value="services" className="text-base h-full">Professional Services</TabsTrigger>
+              <TabsTrigger value="programs" className="text-base h-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground">Training Programs</TabsTrigger>
+              <TabsTrigger value="services" className="text-base h-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground">Professional Services</TabsTrigger>
             </TabsList>
           </AnimatedContent>
           
