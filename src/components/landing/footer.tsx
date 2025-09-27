@@ -1,88 +1,145 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Mountain, Linkedin, Facebook, Twitter, Instagram } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Mountain, Linkedin, Facebook, Twitter, Instagram, Phone, Mail, MapPin } from 'lucide-react';
 
 const socialLinks = [
-  { icon: <Linkedin className="h-5 w-5" />, href: '#' },
-  { icon: <Facebook className="h-5 w-5" />, href: '#' },
-  { icon: <Twitter className="h-5 w-5" />, href: '#' },
-  { icon: <Instagram className="h-5 w-5" />, href: '#' },
+  { icon: <Linkedin className="h-5 w-5" />, href: '#', name: 'LinkedIn' },
+  { icon: <Facebook className="h-5 w-5" />, href: '#', name: 'Facebook' },
+  { icon: <Twitter className="h-5 w-5" />, href: '#', name: 'Twitter' },
+  { icon: <Instagram className="h-5 w-5" />, href: '#', name: 'Instagram' },
 ];
 
-const puneImage = PlaceHolderImages.find(img => img.id === 'branch-pune');
-const mumbaiImage = PlaceHolderImages.find(img => img.id === 'branch-mumbai');
+const usefulLinks = [
+    { href: '#about', label: 'About Us' },
+    { href: '#', label: 'Verify Certificate' },
+    { href: '#', label: 'Career' },
+    { href: '#contact', label: 'Contact Us' },
+    { href: '#', label: 'FAQ' },
+    { href: '#', label: 'Privacy & Policy' },
+    { href: '#', label: 'Terms & Conditions' },
+];
+
+const servicesLinks = [
+    { href: '#services', label: 'Website Development' },
+    { href: '#services', label: 'Website Designing' },
+    { href: '#services', label: 'Graphic Designing' },
+    { href: '#services', label: 'Digital Marketing' },
+    { href: '#services', label: 'App Development' },
+    { href: '#services', label: 'AutoCAD' },
+    { href: '#services', label: 'Data Science & Data Analytics' },
+];
 
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground/80">
-      <div className="container mx-auto px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="relative bg-primary text-primary-foreground/80 pt-32 pb-12 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-32 bg-slate-50 dark:bg-slate-900" style={{clipPath: 'polygon(100% 0, 100% 100%, 0 100%)'}}></div>
+        <div 
+            className="absolute top-0 left-0 w-full overflow-hidden leading-[0]"
+        >
+            <svg 
+                className="relative block w-full h-[120px]"
+                data-name="Layer 1" 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 1200 120" 
+                preserveAspectRatio="none"
+            >
+                <path 
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                    className="fill-current text-slate-50 dark:text-slate-900"
+                ></path>
+            </svg>
+        </div>
+
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Column 1: About & Social */}
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-primary-foreground">
+          <div className="space-y-6 lg:col-span-2">
+            <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-white">
                 <Mountain className="h-7 w-7 text-secondary" />
                 <span>Hanumant</span>
             </Link>
-            <p>Empowering the next generation of tech talent through innovative and practical education.</p>
-            <div className="flex space-x-4">
-              {socialLinks.map((link, index) => (
-                <Link key={index} href={link.href} className="hover:text-primary-foreground transition-colors">
+            <p className="max-w-md">Empowering the next generation of tech talent through innovative and practical education.</p>
+            <div className="flex space-x-2">
+              {socialLinks.map((link) => (
+                <Link key={link.name} href={link.href} className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-secondary hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-secondary/30">
                   {link.icon}
-                  <span className="sr-only">{`Social media link ${index + 1}`}</span>
+                  <span className="sr-only">{link.name}</span>
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Useful Links */}
           <div className="space-y-4">
-            <h4 className="font-headline text-lg font-semibold text-primary-foreground">Quick Links</h4>
+            <h4 className="font-headline text-lg font-semibold text-white">Useful Links</h4>
             <ul className="space-y-2">
-              <li><Link href="#services" className="hover:text-primary-foreground transition-colors">Services</Link></li>
-              <li><Link href="#about" className="hover:text-primary-foreground transition-colors">About Us</Link></li>
-              <li><Link href="#students" className="hover:text-primary-foreground transition-colors">Showcase</Link></li>
-              <li><Link href="#contact" className="hover:text-primary-foreground transition-colors">Contact</Link></li>
-              <li><Link href="#" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link></li>
+              {usefulLinks.map(link => (
+                  <li key={link.label}><Link href={link.href} className="hover:text-white transition-colors duration-200 relative group"><span>{link.label}</span><span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span></Link></li>
+              ))}
             </ul>
           </div>
-
-          {/* Column 3: Contact & Branches */}
+          
+          {/* Column 3: Our Services */}
           <div className="space-y-4">
-            <h4 className="font-headline text-lg font-semibold text-primary-foreground">Our Locations</h4>
-            <div className='space-y-4'>
-                <div className="flex gap-4">
-                    {puneImage && <Image src={puneImage.imageUrl} data-ai-hint={puneImage.imageHint} alt="Pune branch" width={80} height={60} className="rounded-md object-cover"/>}
-                    <div>
-                        <h5 className="font-semibold text-primary-foreground">Pune</h5>
-                        <p className="text-sm">123 Tech Park, Hinjewadi</p>
-                    </div>
-                </div>
-                <div className="flex gap-4">
-                    {mumbaiImage && <Image src={mumbaiImage.imageUrl} data-ai-hint={mumbaiImage.imageHint} alt="Mumbai branch" width={80} height={60} className="rounded-md object-cover"/>}
-                    <div>
-                        <h5 className="font-semibold text-primary-foreground">Mumbai</h5>
-                        <p className="text-sm">456 Innovation Hub, BKC</p>
-                    </div>
-                </div>
-            </div>
+            <h4 className="font-headline text-lg font-semibold text-white">Our Services</h4>
+            <ul className="space-y-2">
+              {servicesLinks.map(link => (
+                  <li key={link.label}><Link href={link.href} className="hover:text-white transition-colors duration-200 relative group"><span>{link.label}</span><span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span></Link></li>
+              ))}
+            </ul>
           </div>
 
           {/* Column 4: Newsletter */}
           <div className="space-y-4">
-            <h4 className="font-headline text-lg font-semibold text-primary-foreground">Join Our Newsletter</h4>
-            <p>Get updates on new courses and tech trends.</p>
+            <h4 className="font-headline text-lg font-semibold text-white">Newsletter</h4>
+            <p className="text-sm">Subscribe to get the latest updates and offers.</p>
             <form className="flex gap-2">
-                <Input type="email" placeholder="Your email" className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"/>
-                <Button variant="secondary">Subscribe</Button>
+                <Input type="email" placeholder="Enter your email" className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:bg-white/20 focus:ring-secondary"/>
+                <Button variant="secondary" size="icon" aria-label="Subscribe"><Mail className="w-5 h-5"/></Button>
             </form>
           </div>
+
         </div>
 
-        <div className="mt-12 border-t border-primary-foreground/20 pt-8 text-center text-sm">
+        {/* Contact Info and Branches */}
+        <div className="mt-16 pt-8 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="flex items-start gap-4">
+                <div className="text-secondary mt-1"><Phone size={20} /></div>
+                <div>
+                    <h5 className="font-semibold text-white">Call Us</h5>
+                    <a href="tel:+919454461808" className="block text-sm hover:text-white transition-colors">+91-9454461808</a>
+                    <a href="tel:+916386198028" className="block text-sm hover:text-white transition-colors">+91-6386198028</a>
+                </div>
+            </div>
+             <div className="flex items-start gap-4">
+                <div className="text-secondary mt-1"><Mail size={20} /></div>
+                <div>
+                    <h5 className="font-semibold text-white">Email Us</h5>
+                    <a href="mailto:info@hanumanttechnology.com" className="block text-sm hover:text-white transition-colors">info@hanumanttechnology.com</a>
+                    <a href="mailto:hanumanttechnology@gmail.com" className="block text-sm hover:text-white transition-colors">hanumanttechnology@gmail.com</a>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                <div className="text-secondary mt-1"><MapPin size={20} /></div>
+                <div>
+                    <h5 className="font-semibold text-white">Lucknow - Aashiyana</h5>
+                    <p className="text-sm">1st Floor, Sadafal Plaza, Sector I, Lucknow-226012</p>
+                </div>
+            </div>
+            <div className="flex items-start gap-4">
+                 <div className="text-secondary mt-1"><MapPin size={20} /></div>
+                <div>
+                    <h5 className="font-semibold text-white">Lucknow - Aliganj</h5>
+                    <p className="text-sm">2nd Floor, Hira Tower 1, Sector C, Aliganj, Lucknow-226024</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm">
           <p>&copy; {new Date().getFullYear()} Hanumant Technology. All Rights Reserved.</p>
         </div>
       </div>
