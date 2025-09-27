@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 const AnimatedBackground = () => (
   <div className="absolute inset-0 overflow-hidden bg-background">
     <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-400/[0.05]" style={{maskImage: "linear-gradient(to bottom, white, transparent)"}}></div>
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--primary)/0.1),transparent_70%)] from-purple-900/10 to-blue-900/10"></div>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-background"></div>
     <ul className="circles">
       <li></li>
       <li></li>
