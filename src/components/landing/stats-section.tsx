@@ -1,12 +1,12 @@
-import { Briefcase, Smile, Star, Users } from 'lucide-react';
+import { Briefcase, Users, Clock, Award } from 'lucide-react';
 import { AnimatedCounter } from '@/components/shared/animated-counter';
 import { AnimatedContent } from '@/components/shared/animated-content';
 
 const stats = [
-  { icon: <Smile className="h-10 w-10 text-secondary" />, value: 5000, label: 'Happy Students', suffix: '+' },
-  { icon: <Briefcase className="h-10 w-10 text-secondary" />, value: 350, label: 'Partner Companies', suffix: '+' },
-  { icon: <Star className="h-10 w-10 text-secondary" />, value: 4.9, label: 'Average Rating', decimals: 1 },
-  { icon: <Users className="h-10 w-10 text-secondary" />, value: 50, label: 'Expert Instructors', suffix: '+' },
+  { icon: <Briefcase className="h-10 w-10 text-secondary" />, value: 340, label: 'Projects', suffix: '+' },
+  { icon: <Clock className="h-10 w-10 text-secondary" />, value: 225060, label: 'Hours Work', suffix: '+' },
+  { icon: <Users className="h-10 w-10 text-secondary" />, value: 16900, label: 'Students', suffix: '+' },
+  { icon: <Award className="h-10 w-10 text-secondary" />, value: 224, label: 'Awards Won', suffix: '+' },
 ];
 
 export default function StatsSection() {
