@@ -51,7 +51,10 @@ export function InteractiveVisual() {
   }
 
   return (
-    <div ref={containerRef} className="relative w-full h-[500px] flex items-center justify-center bg-gray-900 rounded-full">
+    <div ref={containerRef} className="relative w-full h-[500px] flex items-center justify-center">
+      {/* Irregular bubble shape */}
+      <div className="absolute inset-0 m-auto w-[450px] h-[450px] bg-gradient-to-br from-slate-800 to-slate-950 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] animate-morph"></div>
+      
       {/* Central Image */}
       <div className="absolute w-80 h-80 z-10">
       
@@ -96,6 +99,20 @@ export function InteractiveVisual() {
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-20px); }
+        }
+        @keyframes morph {
+          0% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+          }
+          50% {
+            border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+          }
+          100% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+          }
+        }
+        .animate-morph {
+          animation: morph 8s ease-in-out infinite;
         }
       `}</style>
     </div>
