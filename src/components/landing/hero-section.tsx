@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 
 const AnimatedBackground = () => (
   <div className="absolute inset-0 overflow-hidden bg-background">
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,hsl(var(--primary)/0.1),transparent)]"></div>
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--primary)/0.1),transparent_70%)] from-purple-900/10 to-blue-900/10"></div>
     <ul className="circles">
       <li></li>
       <li></li>
