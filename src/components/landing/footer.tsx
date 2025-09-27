@@ -64,49 +64,49 @@ export default function Footer() {
 
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Contact Info and Branches */}
-        <div className="pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="flex items-start gap-4">
-                <div className="text-secondary mt-1"><Phone size={20} /></div>
-                <div>
-                    <h5 className="font-semibold text-white">Call Us</h5>
-                    <a href="tel:+919454461808" className="block text-sm hover:text-white transition-colors">+91-9454461808</a>
-                    <a href="tel:+916386198028" className="block text-sm hover:text-white transition-colors">+91-6386198028</a>
-                </div>
-            </div>
-             <div className="flex items-start gap-4">
-                <div className="text-secondary mt-1"><Mail size={20} /></div>
-                <div>
-                    <h5 className="font-semibold text-white">Email Us</h5>
-                    <a href="mailto:info@hanumanttechnology.com" className="block text-sm hover:text-white transition-colors">info@hanumanttechnology.com</a>
-                    <a href="mailto:hanumanttechnology@gmail.com" className="block text-sm hover:text-white transition-colors">hanumanttechnology@gmail.com</a>
-                </div>
-            </div>
-            <div className="flex items-start gap-4">
-                <div className="text-secondary mt-1"><MapPin size={20} /></div>
-                <div>
-                    <h5 className="font-semibold text-white">Lucknow - Aashiyana</h5>
-                    <p className="text-sm">1st Floor, Sadafal Plaza, Sector I, Lucknow-226012</p>
-                </div>
-            </div>
-            <div className="flex items-start gap-4">
-                 <div className="text-secondary mt-1"><MapPin size={20} /></div>
-                <div>
-                    <h5 className="font-semibold text-white">Lucknow - Aliganj</h5>
-                    <p className="text-sm">2nd Floor, Hira Tower 1, Sector C, Aliganj, Lucknow-226024</p>
-                </div>
-            </div>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pt-16 border-t border-white/10">
-          {/* Column 1: About & Social */}
+          {/* Column 1: About, Contact & Social */}
           <div className="space-y-6 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-white">
                 <Mountain className="h-7 w-7 text-secondary" />
                 <span>Hanumant</span>
             </Link>
             <p className="max-w-md">Empowering the next generation of tech talent through innovative and practical education.</p>
-            <div className="flex space-x-2">
+            
+            <div className="space-y-6 pt-4">
+                <div className="flex items-start gap-4">
+                    <div className="text-secondary mt-1"><Phone size={20} /></div>
+                    <div>
+                        <h5 className="font-semibold text-white">Call Us</h5>
+                        <a href="tel:+919454461808" className="block text-sm hover:text-white transition-colors">+91-9454461808</a>
+                        <a href="tel:+916386198028" className="block text-sm hover:text-white transition-colors">+91-6386198028</a>
+                    </div>
+                </div>
+                 <div className="flex items-start gap-4">
+                    <div className="text-secondary mt-1"><Mail size={20} /></div>
+                    <div>
+                        <h5 className="font-semibold text-white">Email Us</h5>
+                        <a href="mailto:info@hanumanttechnology.com" className="block text-sm hover:text-white transition-colors">info@hanumanttechnology.com</a>
+                        <a href="mailto:hanumanttechnology@gmail.com" className="block text-sm hover:text-white transition-colors">hanumanttechnology@gmail.com</a>
+                    </div>
+                </div>
+                <div className="flex items-start gap-4">
+                    <div className="text-secondary mt-1"><MapPin size={20} /></div>
+                    <div>
+                        <h5 className="font-semibold text-white">Lucknow - Aashiyana</h5>
+                        <p className="text-sm">1st Floor, Sadafal Plaza, Sector I, Lucknow-226012</p>
+                    </div>
+                </div>
+                <div className="flex items-start gap-4">
+                     <div className="text-secondary mt-1"><MapPin size={20} /></div>
+                    <div>
+                        <h5 className="font-semibold text-white">Lucknow - Aliganj</h5>
+                        <p className="text-sm">2nd Floor, Hira Tower 1, Sector C, Aliganj, Lucknow-226024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="flex space-x-2 pt-4">
               {socialLinks.map((link) => (
                 <Link key={link.name} href={link.href} className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-secondary hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-secondary/30">
                   {link.icon}
