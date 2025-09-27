@@ -54,14 +54,13 @@ export function InteractiveVisual() {
     <div ref={containerRef} className="relative w-full h-[500px] flex items-center justify-center bg-gray-900 rounded-full">
       {/* Central Image */}
       <div className="absolute w-80 h-80 z-10">
-        <Image 
-          src="https://portal.coepvlab.ac.in/VirtualMathsLab/resource/images/homepage/ams.gif" 
+      
+      <img src="https://portal.coepvlab.ac.in/VirtualMathsLab/resource/images/homepage/ams.gif" 
           alt="Abstract technology visualization"
           data-ai-hint="abstract technology"
           width={320}
           height={320}
-          className="object-contain"
-        />
+          className="object-contain"/>
       </div>
       
       {/* Orbiting Icons */}
