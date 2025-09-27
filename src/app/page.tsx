@@ -1,7 +1,6 @@
 import Header from '@/components/landing/header';
 import HeroSection from '@/components/landing/hero-section';
 import CoreValuesSection from '@/components/landing/core-values-section';
-import AboutUsTimeline from '@/components/landing/about-us-timeline';
 import ProgramsServicesSection from '@/components/landing/programs-services-section';
 import StudentShowcase from '@/components/landing/student-showcase';
 import CtaSection from '@/components/landing/cta-section';
@@ -17,7 +16,6 @@ export default function Home() {
         <HeroSection />
         <CoreValuesSection />
         <ProgramsServicesSection />
-        <AboutUsTimeline />
         <StudentShowcase />
         <StatsSection />
         <CtaSection />
