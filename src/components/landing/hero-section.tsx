@@ -41,10 +41,10 @@ export default function HeroSection() {
                 <div className="relative container mx-auto px-4 md:px-6 z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="text-center md:text-left">
-                            <h1 className="font-headline text-3xl font-extrabold tracking-tight sm:text-4xl">
+                            <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl">
                                 Best IT Company & No.1 Training Institute
                             </h1>
-                            <p className="mt-6 max-w-2xl mx-auto md:mx-0 text-base text-white/80 md:text-lg">
+                            <p className="mt-6 max-w-2xl mx-auto md:mx-0 text-lg text-white/80 md:text-xl">
                                 Hanumant Technology is the Best IT Company & Training Institute in Lucknow. We provide #1 IT Services and Training programs with 100% job placement.
                             </p>
                         </div>
@@ -63,12 +63,12 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
                 <AnimatedContent>
-                    <h1 className="font-headline text-3xl font-extrabold tracking-tight sm:text-4xl">
+                    <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl">
                         Best IT Company & No.1 Training Institute
                     </h1>
                 </AnimatedContent>
                 <AnimatedContent delay={150}>
-                    <p className="mt-6 max-w-2xl mx-auto md:mx-0 text-base text-white/80 md:text-lg">
+                    <p className="mt-6 max-w-2xl mx-auto md:mx-0 text-lg text-white/80 md:text-xl">
                         Hanumant Technology is the Best IT Company & Training Institute in Lucknow. We provide #1 IT Services and Training programs with 100% job placement.
                     </p>
                 </AnimatedContent>
@@ -92,21 +92,17 @@ export default function HeroSection() {
       </div>
 
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
-          <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-              className="relative block w-full h-[80px] fill-current text-slate-50 dark:text-slate-900"
-          >
-              <path
-                d="M1200 120L0 120 0 0 1200 0 1200 120z"
-                className="fill-slate-900"
-              ></path>
-              <path
-                d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
-                className="fill-slate-50 dark:fill-slate-900"
-              ></path>
-          </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          className="relative block w-full h-[120px] sm:h-[160px]"
+        >
+          <path
+            fill="hsl(var(--background))"
+            d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,170.7C672,160,768,160,864,176C960,192,1056,224,1152,229.3C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
       </div>
     </section>
   );
