@@ -56,14 +56,14 @@ export function InteractiveVisual() {
       <div className="absolute inset-0 m-auto w-[450px] h-[450px] bg-gradient-to-br from-slate-800 to-slate-950 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] animate-morph"></div>
       
       {/* Central Image */}
-      <div className="absolute w-80 h-80 z-10">
+      <div className="absolute w-96 h-96 z-10">
       
       <img src="https://portal.coepvlab.ac.in/VirtualMathsLab/resource/images/homepage/ams.gif" 
           alt="Abstract technology visualization"
           data-ai-hint="abstract technology"
-          width={320}
-          height={320}
-          className="object-contain"/>
+          width={384}
+          height={384}
+          className="object-contain w-full h-full"/>
       </div>
       
       {/* Orbiting Icons */}
