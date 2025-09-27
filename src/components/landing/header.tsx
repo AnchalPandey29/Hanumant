@@ -27,11 +27,37 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const headerClasses = isMounted && isScrolled 
+  if (!isMounted) {
+    return (
+        <header className="sticky top-0 z-50 w-full bg-transparent">
+             <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+                <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-white">
+                    <Mountain className="h-7 w-7 text-secondary" />
+                    <span className="font-headline">Hanumant</span>
+                </Link>
+                <nav className="hidden items-center gap-6 md:flex">
+                    {navLinks.map((link) => (
+                        <Link key={link.href} href={link.href} className="font-medium text-white/80 hover:text-white">
+                        {link.label}
+                        </Link>
+                    ))}
+                </nav>
+                <div className="flex items-center gap-4">
+                    <Button variant="secondary" className="hidden md:inline-flex">Get in Touch</Button>
+                    <Button variant="outline" size="icon" className="md:hidden rounded-full bg-background/20 backdrop-blur-sm shadow-lg text-white border-white/20">
+                        <Menu className="h-6 w-6" />
+                    </Button>
+                </div>
+            </div>
+      </header>
+    );
+  }
+
+  const headerClasses = isScrolled 
     ? 'bg-background/80 shadow-md backdrop-blur-sm' 
     : 'bg-transparent';
   
-  const textClasses = isMounted && isScrolled
+  const textClasses = isScrolled
     ? 'text-primary'
     : 'text-white';
   

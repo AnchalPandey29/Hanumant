@@ -47,7 +47,7 @@ export function InteractiveVisual() {
   }, [isMounted]);
 
   if (!isMounted) {
-    return null;
+    return <div className="w-full h-[500px]" />;
   }
 
   return (
