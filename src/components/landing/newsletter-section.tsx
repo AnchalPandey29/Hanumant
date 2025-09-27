@@ -31,10 +31,6 @@ export default function NewsletterSection() {
             setStatus('idle');
         } else {
             setStatus('success');
-            toast({
-                title: "Subscribed!",
-                description: "Thanks for joining our newsletter.",
-            });
             setTimeout(() => {
                 setStatus('idle');
                 setEmail('');
@@ -48,10 +44,10 @@ export default function NewsletterSection() {
         <AnimatedContent>
           <Card className="max-w-2xl mx-auto shadow-lg border-none bg-slate-50 dark:bg-slate-900">
             <CardHeader className="text-center">
-              <div className="mx-auto bg-accent/10 rounded-full p-3 w-fit mb-4">
-                <Mail className="h-8 w-8 text-accent" />
+              <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
+                <Mail className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle className="font-headline text-3xl">Stay Ahead of the Curve</CardTitle>
+              <CardTitle className="font-headline text-3xl">Stay Informed</CardTitle>
               <CardDescription className="text-lg text-foreground/70 mt-2">
                 Subscribe to our newsletter for the latest in tech, course updates, and special offers.
               </CardDescription>
@@ -61,16 +57,23 @@ export default function NewsletterSection() {
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  className="h-14 text-lg bg-background"
+                  className="h-14 text-lg bg-background rounded-full"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={status !== 'idle'}
                   required
                 />
-                <Button type="submit" size="lg" className="h-14 text-lg" variant="secondary" disabled={status !== 'idle'}>
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="h-14 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-primary/40" 
+                  disabled={status !== 'idle'}
+                >
                   {status === 'loading' && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
                   {status === 'success' && <CheckCircle className="mr-2 h-5 w-5" />}
-                  {status === 'idle' ? 'Subscribe' : status === 'loading' ? 'Subscribing...' : 'Subscribed!'}
+                  {status === 'idle' && 'Subscribe'}
+                  {status === 'loading' && 'Subscribing...'}
+                  {status === 'success' && 'Thank you for subscribing!'}
                 </Button>
               </form>
             </CardContent>
