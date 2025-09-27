@@ -189,7 +189,7 @@ export default function HeroSection() {
                         <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full text-lg py-7 px-8 shadow-lg shadow-secondary/20 hover:shadow-secondary/30 transition-shadow">
                             Start Learning Today
                         </Button>
-                        <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-muted rounded-full text-lg py-7 px-8">
+                        <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-muted hover:text-black rounded-full text-lg py-7 px-8">
                             Explore Programs
                         </Button>
                     </div>
