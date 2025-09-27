@@ -33,24 +33,20 @@ const servicesLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-primary text-primary-foreground/80 pt-32 pb-12 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-32 bg-slate-50 dark:bg-slate-900" style={{clipPath: 'polygon(100% 0, 100% 100%, 0 100%)'}}></div>
-        <div 
-            className="absolute top-0 left-0 w-full overflow-hidden leading-[0]"
-        >
-            <svg 
-                className="relative block w-full h-[120px]"
-                data-name="Layer 1" 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 1200 120" 
-                preserveAspectRatio="none"
-            >
-                <path 
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                    className="fill-current text-slate-50 dark:text-slate-900"
-                ></path>
-            </svg>
-        </div>
+    <footer className="relative bg-primary text-primary-foreground/80 pt-24 sm:pt-32 pb-12">
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
+          <svg
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+              className="relative block w-full h-[150px] fill-current text-slate-50 dark:text-slate-900"
+          >
+              <path
+                  d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.3-16.72-168.19-17.73-250.45-.39-55.23,11.35-115.54,23.46-176.16,40.27-119.27,33.18-289.54,54.2-417.23,43.06V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              ></path>
+          </svg>
+      </div>
 
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
