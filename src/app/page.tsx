@@ -1,3 +1,29 @@
+import Header from '@/components/landing/header';
+import HeroSection from '@/components/landing/hero-section';
+import CoreValuesSection from '@/components/landing/core-values-section';
+import AboutUsTimeline from '@/components/landing/about-us-timeline';
+import ProgramsServicesSection from '@/components/landing/programs-services-section';
+import StudentShowcase from '@/components/landing/student-showcase';
+import CtaSection from '@/components/landing/cta-section';
+import StatsSection from '@/components/landing/stats-section';
+import NewsletterSection from '@/components/landing/newsletter-section';
+import Footer from '@/components/landing/footer';
+
 export default function Home() {
-  return <></>;
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-1">
+        <HeroSection />
+        <CoreValuesSection />
+        <ProgramsServicesSection />
+        <AboutUsTimeline />
+        <StudentShowcase />
+        <StatsSection />
+        <CtaSection />
+        <NewsletterSection />
+      </main>
+      <Footer />
+    </div>
+  );
 }
