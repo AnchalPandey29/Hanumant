@@ -26,12 +26,12 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
+  
   if (!isMounted) {
     return (
         <header className="sticky top-0 z-50 w-full bg-transparent">
              <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-                <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-white">
+                <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-primary">
                     <Mountain className="h-7 w-7 text-secondary" />
                     <span className="font-headline">Hanumant</span>
                 </Link>
@@ -47,18 +47,7 @@ export default function Header() {
   
   const textClasses = isScrolled
     ? 'text-primary'
-    : 'text-white';
-  
-  const getMobileButtonClasses = () => {
-    let classes = 'md:hidden rounded-full bg-background/20 backdrop-blur-sm shadow-lg transition-colors duration-300 ';
-    if (isMenuOpen) {
-        classes += 'bg-secondary text-secondary-foreground ';
-    } else {
-        classes += isScrolled ? 'text-primary border-border ' : 'text-white border-white/20 ';
-    }
-    return classes;
-  };
-
+    : 'text-primary';
 
   return (
     <header
@@ -74,18 +63,18 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-foreground/80 hover:text-foreground' : 'text-white/80 hover:text-white'}`}
+              className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-foreground/80 hover:text-foreground' : 'text-primary/80 hover:text-primary'}`}
             >
               {link.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-4">
-           <Button variant="secondary" className="hidden md:inline-flex">Get in Touch</Button>
+           <Button variant="secondary" className="hidden md:inline-flex text-secondary-foreground rounded-full shadow-lg shadow-secondary/20 hover:shadow-secondary/30 transition-shadow">Get in Touch</Button>
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className={getMobileButtonClasses()}>
-                <Menu className="h-6 w-6" />
+              <Button variant="outline" size="icon" className="md:hidden rounded-full border-border bg-background/50 backdrop-blur-sm">
+                <Menu className="h-6 w-6 text-primary" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
@@ -107,7 +96,7 @@ export default function Header() {
                     </Link>
                   ))}
                 </nav>
-                <Button variant="secondary" className="w-full">Get in Touch</Button>
+                <Button variant="secondary" className="w-full text-secondary-foreground">Get in Touch</Button>
               </div>
             </SheetContent>
           </Sheet>

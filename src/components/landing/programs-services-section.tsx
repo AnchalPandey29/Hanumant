@@ -68,8 +68,9 @@ const TiltCard = ({ children }: { children: React.ReactNode }) => {
 
 export default function ProgramsServicesSection() {
   return (
-    <section id="services" className="py-20 sm:py-32 relative bg-slate-50 dark:bg-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjA0LDIwNCwyMDQsMC4wNSkiPjxwYXRoIGQ9Ik0wIC41SDMybTAtMTZ2MzJNMTAgMC41SDIybTAtMTZ2MzJNMjAgMC41SDIybTAtMTZ2MzIiLz48L3N2Zz4=')] opacity-50 dark:opacity-100"></div>
+    <section id="services" className="py-20 sm:py-32 relative bg-background overflow-hidden">
+        <div className="absolute inset-0 bg-grid-slate-900/[0.02] bg-[bottom_1px_center] dark:bg-grid-slate-400/[0.03]" style={{maskImage: "linear-gradient(to bottom, transparent, black, black, transparent)"}}></div>
+
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <AnimatedContent>
@@ -83,9 +84,9 @@ export default function ProgramsServicesSection() {
 
         <Tabs defaultValue="programs" className="w-full max-w-7xl mx-auto">
           <AnimatedContent delay={150}>
-            <TabsList className="grid w-full grid-cols-2 h-14 bg-background/60 backdrop-blur-sm border shadow-inner">
-              <TabsTrigger value="programs" className="text-base h-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground">Training Programs</TabsTrigger>
-              <TabsTrigger value="services" className="text-base h-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground">Professional Services</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 h-14 bg-muted/60 backdrop-blur-sm border shadow-inner">
+              <TabsTrigger value="programs" className="text-base h-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground data-[state=active]:shadow-md">Training Programs</TabsTrigger>
+              <TabsTrigger value="services" className="text-base h-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground data-[state=active]:shadow-md">Professional Services</TabsTrigger>
             </TabsList>
           </AnimatedContent>
           
@@ -94,8 +95,8 @@ export default function ProgramsServicesSection() {
               {programs.map((item, index) => (
                 <AnimatedContent key={item.title} delay={index * 150}>
                   <TiltCard>
-                    <Card className="h-full text-center bg-background/60 dark:bg-card/70 backdrop-blur-md border border-white/10 shadow-lg group flex flex-col">
-                        <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <Card className="h-full text-center bg-card/60 backdrop-blur-md border shadow-lg group flex flex-col">
+                        <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <CardHeader className="items-center relative z-10">
                             <div className="p-4 bg-secondary/10 rounded-full mb-2 border border-secondary/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary/20">
                                 {item.icon}
@@ -116,8 +117,8 @@ export default function ProgramsServicesSection() {
               {services.map((item, index) => (
                 <AnimatedContent key={item.title} delay={index * 100}>
                   <TiltCard>
-                    <Card className="h-full text-center bg-background/60 dark:bg-card/70 backdrop-blur-md border border-white/10 shadow-lg group flex flex-col">
-                         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <Card className="h-full text-center bg-card/60 backdrop-blur-md border shadow-lg group flex flex-col">
+                         <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <CardHeader className="items-center relative z-10">
                             <div className="p-4 bg-accent/10 rounded-full mb-2 border border-accent/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/20">
                                 {item.icon}
@@ -135,6 +136,14 @@ export default function ProgramsServicesSection() {
           </TabsContent>
         </Tabs>
       </div>
+      <style jsx>{`
+        .bg-grid-slate-900\\[\\/0\\.02\\] {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%230f172a' stroke-dasharray='1 31'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+        }
+        .dark .bg-grid-slate-400\\[\\/0\\.03\\] {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%2394a3b8' stroke-dasharray='1 31'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+        }
+    `}</style>
     </section>
   );
 }
