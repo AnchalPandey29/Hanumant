@@ -1,6 +1,27 @@
 import { Button } from '@/components/ui/button';
 import { AnimatedContent } from '@/components/shared/animated-content';
 import Image from 'next/image';
+import { TrendingUp, Briefcase, Users, Target } from 'lucide-react';
+
+const benefits = [
+  {
+    icon: <TrendingUp className="h-7 w-7 text-secondary" />,
+    text: 'Boost Your Skills & Career',
+  },
+  {
+    icon: <Briefcase className="h-7 w-7 text-secondary" />,
+    text: 'Grow Your Online Business',
+  },
+  {
+    icon: <Users className="h-7 w-7 text-secondary" />,
+    text: 'Get Professional Jobs',
+  },
+  {
+    icon: <Target className="h-7 w-7 text-secondary" />,
+    text: 'Join Us to Set your Goal',
+  },
+];
+
 
 export default function CtaSection() {
   return (
@@ -36,8 +57,20 @@ export default function CtaSection() {
                     </div>
                 </AnimatedContent>
                 
-                {/* Empty div for grid layout */}
-                <div></div>
+                <AnimatedContent delay={200}>
+                  <div className="space-y-8">
+                    {benefits.map((benefit, index) => (
+                      <div key={index} className="flex items-start gap-4">
+                        <div className="bg-primary-foreground/10 p-3 rounded-full border border-primary-foreground/20">
+                            {benefit.icon}
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-white">{benefit.text}</h3>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </AnimatedContent>
             </div>
         </div>
     </section>
