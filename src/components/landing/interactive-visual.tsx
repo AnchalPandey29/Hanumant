@@ -5,12 +5,12 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 const icons = [
-  { icon: GraduationCap, size: 'w-16 h-16', color: 'text-sky-400' },
-  { icon: Code, size: 'w-12 h-12', color: 'text-teal-400' },
-  { icon: TrendingUp, size: 'w-14 h-14', color: 'text-indigo-400' },
-  { icon: BrainCircuit, size: 'w-12 h-12', color: 'text-purple-400' },
-  { icon: Rocket, size: 'w-10 h-10', color: 'text-pink-400' },
-  { icon: Trophy, size: 'w-14 h-14', color: 'text-yellow-400' },
+  { icon: GraduationCap, color: 'text-sky-400' },
+  { icon: Code, color: 'text-teal-400' },
+  { icon: TrendingUp, color: 'text-indigo-400' },
+  { icon: BrainCircuit, color: 'text-purple-400' },
+  { icon: Rocket, color: 'text-pink-400' },
+  { icon: Trophy, color: 'text-yellow-400' },
 ];
 
 export function InteractiveVisual() {
@@ -44,12 +44,12 @@ export function InteractiveVisual() {
   return (
     <div ref={containerRef} className="relative w-full h-[450px] flex items-center justify-center">
       {/* Central Image */}
-      <div className="absolute w-80 h-80">
+      <div className="absolute w-64 h-64 z-10">
         <Image 
           src="https://d1rdz15x9x7c4f.cloudfront.net/assets/payload-images/Why-Choose-OneClick-for-Data-Engineering-Services-.png" 
           alt="Data Engineering Services"
-          width={320}
-          height={320}
+          width={256}
+          height={256}
           className="object-contain"
         />
       </div>
@@ -57,7 +57,7 @@ export function InteractiveVisual() {
       {/* Orbiting Icons */}
       {icons.map((item, index) => {
         const angle = (index / icons.length) * 2 * Math.PI;
-        const radius = 220; // Increased radius to orbit around the image
+        const radius = 200; // Radius for the orbit
         const x = Math.cos(angle) * radius;
         const y = Math.sin(angle) * radius;
         const animationDelay = `${index * 1.5}s`;
@@ -68,16 +68,14 @@ export function InteractiveVisual() {
             ref={el => iconsRef.current[index] = el}
             className="absolute transition-transform duration-300 ease-out"
             style={{ 
-              top: `calc(50% + ${y}px - (var(--icon-size, 3rem) / 2))`, 
-              left: `calc(50% + ${x}px - (var(--icon-size, 3rem) / 2))`,
+              top: `calc(50% + ${y}px - 2rem)`, 
+              left: `calc(50% + ${x}px - 2rem)`,
               animation: `float 6s ease-in-out infinite`,
               animationDelay,
-              ['--icon-size' as string]: item.size.split(' ')[0].replace('w-', '') + 'rem',
             }}
           >
             <div className={cn(
-              "p-4 bg-gray-800/50 rounded-full shadow-lg backdrop-blur-sm border border-white/10",
-              item.size
+              "w-16 h-16 p-4 bg-gray-800/50 rounded-full shadow-lg backdrop-blur-sm border border-white/10"
             )}>
               <item.icon className={cn("w-full h-full", item.color)} strokeWidth={1.5} />
             </div>
