@@ -61,22 +61,26 @@ export default function Header() {
           <Mountain className="h-7 w-7 text-secondary" />
           <span className="font-headline">Hanumant</span>
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-foreground/80 hover:text-foreground' : 'text-primary/80 hover:text-primary'}`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="flex items-center gap-4">
-           <Button variant="secondary" className="hidden md:inline-flex text-secondary-foreground rounded-full shadow-lg shadow-secondary/20 hover:shadow-secondary/30 transition-shadow">Get in Touch</Button>
+        
+        <div className="hidden md:flex items-center gap-6">
+            <nav className="flex items-center gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-foreground/80 hover:text-foreground' : 'text-primary/80 hover:text-primary'}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+           <Button variant="secondary" className="text-secondary-foreground rounded-full shadow-lg shadow-secondary/20 hover:shadow-secondary/30 transition-shadow">Get in Touch</Button>
+        </div>
+
+        <div className="md:hidden">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="md:hidden rounded-full border-border bg-background/50 backdrop-blur-sm">
+              <Button variant="outline" size="icon" className="rounded-full border-border bg-background/50 backdrop-blur-sm">
                 <Menu className="h-6 w-6 text-primary" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
