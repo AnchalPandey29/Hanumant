@@ -41,7 +41,7 @@ export default function HeroSection() {
                 <div className="relative container mx-auto px-4 md:px-6 z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="text-center md:text-left">
-                            <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl">
+                            <h1 className="font-headline text-3xl font-extrabold tracking-tight sm:text-4xl">
                                 Best IT Company & No.1 Training Institute
                             </h1>
                             <p className="mt-6 max-w-2xl mx-auto md:mx-0 text-base text-white/80 md:text-lg">
@@ -63,7 +63,7 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
                 <AnimatedContent>
-                    <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl">
+                    <h1 className="font-headline text-3xl font-extrabold tracking-tight sm:text-4xl">
                         Best IT Company & No.1 Training Institute
                     </h1>
                 </AnimatedContent>
@@ -89,6 +89,24 @@ export default function HeroSection() {
                 </AnimatedContent>
             </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+              className="relative block w-full h-[80px] fill-current text-slate-50 dark:text-slate-900"
+          >
+              <path
+                d="M1200 120L0 120 0 0 1200 0 1200 120z"
+                className="fill-slate-900"
+              ></path>
+              <path
+                d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+                className="fill-slate-50 dark:fill-slate-900"
+              ></path>
+          </svg>
       </div>
     </section>
   );
