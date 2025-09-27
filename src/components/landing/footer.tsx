@@ -64,9 +64,9 @@ export default function Footer() {
 
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pt-16 border-t border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pt-16 border-t border-white/10">
           
-          <div className="space-y-6 lg:col-span-1">
+          <div className="space-y-6 lg:col-span-3">
             <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-white">
                 <Mountain className="h-7 w-7 text-secondary" />
                 <span>Hanumant</span>
@@ -82,32 +82,32 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 lg:col-span-3">
             <h4 className="font-headline text-lg font-semibold text-white">Contact Us</h4>
              <div className="space-y-4">
                  <div className="flex items-start gap-4">
-                    <div className="text-secondary mt-1"><Phone size={20} /></div>
+                    <div className="text-secondary mt-1 shrink-0"><Phone size={20} /></div>
                     <div>
                         <a href="tel:+919454461808" className="block text-sm hover:text-white transition-colors">+91-9454461808</a>
                         <a href="tel:+916386198028" className="block text-sm hover:text-white transition-colors">+91-6386198028</a>
                     </div>
                 </div>
                  <div className="flex items-start gap-4">
-                    <div className="text-secondary mt-1"><Mail size={20} /></div>
+                    <div className="text-secondary mt-1 shrink-0"><Mail size={20} /></div>
                     <div>
                         <a href="mailto:info@hanumanttechnology.com" className="block text-sm hover:text-white transition-colors">info@hanumanttechnology.com</a>
                         <a href="mailto:hanumanttechnology@gmail.com" className="block text-sm hover:text-white transition-colors">hanumanttechnology@gmail.com</a>
                     </div>
                 </div>
                 <div className="flex items-start gap-4">
-                    <div className="text-secondary mt-1"><MapPin size={20} /></div>
+                    <div className="text-secondary mt-1 shrink-0"><MapPin size={20} /></div>
                     <div>
                         <h5 className="font-semibold text-white">Lucknow - Aashiyana</h5>
                         <p className="text-sm">1st Floor, Sadafal Plaza, Sector I, Lucknow-226012</p>
                     </div>
                 </div>
                 <div className="flex items-start gap-4">
-                     <div className="text-secondary mt-1"><MapPin size={20} /></div>
+                     <div className="text-secondary mt-1 shrink-0"><MapPin size={20} /></div>
                     <div>
                         <h5 className="font-semibold text-white">Lucknow - Aliganj</h5>
                         <p className="text-sm">2nd Floor, Hira Tower 1, Sector C, Aliganj, Lucknow-226024</p>
@@ -116,7 +116,7 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <h4 className="font-headline text-lg font-semibold text-white">Useful Links</h4>
             <ul className="space-y-2">
               {usefulLinks.map(link => (
@@ -125,7 +125,7 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <h4 className="font-headline text-lg font-semibold text-white">Our Services</h4>
             <ul className="space-y-2">
               {servicesLinks.map(link => (
@@ -134,10 +134,10 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <h4 className="font-headline text-lg font-semibold text-white">Newsletter</h4>
             <p className="text-sm">Subscribe to get the latest updates and offers.</p>
-            <form className="flex gap-2">
+            <form className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-2">
                 <Input type="email" placeholder="Enter your email" className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:bg-white/20 focus:ring-secondary"/>
                 <Button variant="secondary" size="icon" aria-label="Subscribe"><Mail className="w-5 h-5"/></Button>
             </form>
