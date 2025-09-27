@@ -35,19 +35,7 @@ export default function Header() {
                     <Mountain className="h-7 w-7 text-secondary" />
                     <span className="font-headline">Hanumant</span>
                 </Link>
-                <nav className="hidden items-center gap-6 md:flex">
-                    {navLinks.map((link) => (
-                        <Link key={link.href} href={link.href} className="font-medium text-white/80 hover:text-white">
-                        {link.label}
-                        </Link>
-                    ))}
-                </nav>
-                <div className="flex items-center gap-4">
-                    <Button variant="secondary" className="hidden md:inline-flex">Get in Touch</Button>
-                    <Button variant="outline" size="icon" className="md:hidden rounded-full bg-background/20 backdrop-blur-sm shadow-lg text-white border-white/20">
-                        <Menu className="h-6 w-6" />
-                    </Button>
-                </div>
+                <div className="h-10 w-10 md:hidden" />
             </div>
       </header>
     );
