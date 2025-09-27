@@ -1,7 +1,7 @@
 'use client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Code, Server, Briefcase, Laptop } from 'lucide-react';
+import { Code, Server, Briefcase, Laptop, Smartphone, Scaling, Megaphone, Search } from 'lucide-react';
 import { AnimatedContent } from '@/components/shared/animated-content';
 import React, { useRef } from 'react';
 
@@ -9,6 +9,10 @@ const programs = [
   { icon: <Code className="h-8 w-8 text-secondary" />, title: 'Full Stack Development', description: 'Master both front-end and back-end technologies.' },
   { icon: <Laptop className="h-8 w-8 text-secondary" />, title: 'Data Science & ML', description: 'Unlock insights from data with Python, and ML frameworks.' },
   { icon: <Server className="h-8 w-8 text-secondary" />, title: 'Cloud & DevOps', description: 'Learn to build and manage scalable infrastructure.' },
+  { icon: <Smartphone className="h-8 w-8 text-secondary" />, title: 'App Development', description: 'Build native and cross-platform mobile applications.' },
+  { icon: <Scaling className="h-8 w-8 text-secondary" />, title: 'AutoCAD', description: 'Design and draft 2D & 3D models with precision.' },
+  { icon: <Megaphone className="h-8 w-8 text-secondary" />, title: 'Digital Marketing', description: 'Grow your online presence with modern marketing strategies.' },
+  { icon: <Search className="h-8 w-8 text-secondary" />, title: 'SEO', description: 'Optimize websites to rank higher on search engines.' },
 ];
 
 const services = [
@@ -74,7 +78,7 @@ export default function ProgramsServicesSection() {
           </AnimatedContent>
           
           <TabsContent value="programs" className="mt-12">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {programs.map((item, index) => (
                 <AnimatedContent key={item.title} delay={index * 150}>
                   <TiltCard>
