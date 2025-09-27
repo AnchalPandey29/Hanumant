@@ -1,7 +1,10 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { BrainCircuit, GraduationCap, HeartHandshake, Lightbulb, Target, Eye, ArrowRight, Users, ShieldCheck } from 'lucide-react';
 import { AnimatedContent } from '@/components/shared/animated-content';
+import React, { useState, useEffect } from 'react';
 
 const aboutUsCards = [
   {
@@ -50,6 +53,16 @@ const values = [
 ];
 
 export default function CoreValuesSection() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+      setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+      return <section id="values" className="py-20 sm:py-32 bg-slate-50 dark:bg-slate-900"></section>;
+  }
+
   return (
     <section id="values" className="py-20 sm:py-32 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjA0LDIwNCwyMDQsMC4wNSkiPjxwYXRoIGQ9Ik0wIC41SDMybTAtMTZ2MzJNMTAgMC41SDIybTAtMTZ2MzJNMjAgMC41SDIybTAtMTZ2MzIiLz48L3N2Zz4=')] opacity-50"></div>
