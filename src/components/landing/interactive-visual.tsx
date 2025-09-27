@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Code, GraduationCap, TrendingUp, BrainCircuit, Rocket, Trophy } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -16,10 +16,15 @@ const icons = [
 export function InteractiveVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const iconsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || !isMounted) return;
 
     const handleMouseMove = (event: MouseEvent) => {
       const { clientX, clientY } = event;
@@ -39,7 +44,11 @@ export function InteractiveVisual() {
 
     container.addEventListener('mousemove', handleMouseMove);
     return () => container.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isMounted]);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div ref={containerRef} className="relative w-full h-[500px] flex items-center justify-center">
