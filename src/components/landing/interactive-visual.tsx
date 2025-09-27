@@ -42,14 +42,14 @@ export function InteractiveVisual() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[450px] flex items-center justify-center">
+    <div ref={containerRef} className="relative w-full h-[500px] flex items-center justify-center">
       {/* Central Image */}
-      <div className="absolute w-64 h-64 z-10">
+      <div className="absolute w-80 h-80 z-10">
         <Image 
           src="https://d1rdz15x9x7c4f.cloudfront.net/assets/payload-images/Why-Choose-OneClick-for-Data-Engineering-Services-.png" 
           alt="Data Engineering Services"
-          width={256}
-          height={256}
+          width={320}
+          height={320}
           className="object-contain"
         />
       </div>
@@ -57,7 +57,7 @@ export function InteractiveVisual() {
       {/* Orbiting Icons */}
       {icons.map((item, index) => {
         const angle = (index / icons.length) * 2 * Math.PI;
-        const radius = 200; // Radius for the orbit
+        const radius = 220; // Radius for the orbit
         const x = Math.cos(angle) * radius;
         const y = Math.sin(angle) * radius;
         const animationDelay = `${index * 1.5}s`;
