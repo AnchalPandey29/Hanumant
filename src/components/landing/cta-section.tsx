@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { AnimatedContent } from '@/components/shared/animated-content';
 import Image from 'next/image';
 import { TrendingUp, Briefcase, Users, Target } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 
 const benefits = [
   {
@@ -25,6 +26,15 @@ const benefits = [
 ];
 
 export default function CtaSection() {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return <section className="bg-primary text-primary-foreground py-20 sm:py-32"></section>;
+    }
   return (
     <>
     <section className="relative bg-primary text-primary-foreground overflow-hidden">

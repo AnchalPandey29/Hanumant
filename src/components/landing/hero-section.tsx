@@ -1,6 +1,9 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { AnimatedContent } from '../shared/animated-content';
 import { InteractiveVisual } from './interactive-visual';
+import React, { useState, useEffect } from 'react';
 
 const GridPattern = () => (
     <svg
@@ -26,6 +29,30 @@ const GridPattern = () => (
 
 
 export default function HeroSection() {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return (
+            <section className="relative w-full h-screen min-h-[700px] flex items-center justify-center bg-slate-900 text-white overflow-hidden">
+                <div className="relative container mx-auto px-4 md:px-6 z-10">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div className="text-center md:text-left">
+                            <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl">
+                                Best IT Company & No.1 Training Institute
+                            </h1>
+                            <p className="mt-6 max-w-2xl mx-auto md:mx-0 text-base text-white/80 md:text-lg">
+                                Hanumant Technology is the Best IT Company & Training Institute in Lucknow. We provide #1 IT Services and Training programs with 100% job placement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+    }
   return (
     <section className="relative w-full h-screen min-h-[700px] flex items-center justify-center bg-slate-900 text-white overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
@@ -36,7 +63,7 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
                 <AnimatedContent>
-                    <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+                    <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl">
                         Best IT Company & No.1 Training Institute
                     </h1>
                 </AnimatedContent>
