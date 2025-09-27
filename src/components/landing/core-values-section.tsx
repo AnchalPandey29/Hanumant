@@ -1,17 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { BrainCircuit, GraduationCap, HeartHandshake, Lightbulb, Target, Eye, ArrowRight, Users, ShieldCheck } from 'lucide-react';
 import { AnimatedContent } from '@/components/shared/animated-content';
 
 const aboutUsCards = [
   {
-    icon: <Target className="h-10 w-10 text-white/90" />,
+    icon: <Target className="h-10 w-10 text-primary dark:text-white/90" />,
     title: 'Our Mission',
     description: 'To deliver innovative and practical tech education that empowers individuals to achieve their full potential and bridges the talent gap in the industry.',
   },
   {
-    icon: <Eye className="h-10 w-10 text-white/90" />,
+    icon: <Eye className="h-10 w-10 text-primary dark:text-white/90" />,
     title: 'Our Vision',
     description: 'To be a global leader in technology training, recognized for our commitment to excellence, student success, and fostering a community of lifelong learners.',
   }
@@ -91,29 +90,27 @@ export default function CoreValuesSection() {
                     The principles that guide our mission to empower tech professionals.
                 </p>
             </AnimatedContent>
-            <TooltipProvider>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                {values.map((value, index) => (
-                    <AnimatedContent key={value.title} delay={index * 100}>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <Card className="h-full text-center bg-background/60 dark:bg-card/60 backdrop-blur-sm border-white/20 shadow-lg hover:shadow-accent/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
-                                    <CardHeader className="items-center p-4 sm:p-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {values.map((value, index) => (
+                <AnimatedContent key={value.title} delay={index * 100}>
+                    <Card className="h-full text-center bg-background/60 dark:bg-card/60 backdrop-blur-sm border-white/20 shadow-lg hover:shadow-accent/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+                        <CardContent className="p-4 sm:p-6 flex flex-col items-center justify-center h-full">
+                            <div className="relative w-full h-full flex items-center justify-center">
+                                <div className="transition-opacity duration-300 group-hover:opacity-0">
                                     <div className="rounded-full bg-accent/10 p-4 transition-colors duration-300 group-hover:bg-accent/20">
                                         {value.icon}
                                     </div>
                                     <CardTitle className="font-headline text-base sm:text-lg mt-4">{value.title}</CardTitle>
-                                    </CardHeader>
-                                </Card>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>{value.description}</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </AnimatedContent>
-                ))}
-                </div>
-            </TooltipProvider>
+                                </div>
+                                <div className="absolute inset-0 flex items-center justify-center p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                    <p className="text-sm text-center text-foreground/80">{value.description}</p>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </AnimatedContent>
+            ))}
+            </div>
           </div>
         </div>
 
